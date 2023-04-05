@@ -29,6 +29,7 @@
         <div class="search-bar">
           <input type="text" placeholder="search">
           <button>ძებნა</button>
+          <button class="add">დამატება</button>
         </div>
         <div class="titles">
           <div class="w-15">შტრიხკოდი</div>
@@ -55,7 +56,7 @@
           <div class="close-btn">
             <div>დახურვა</div>
           </div>
-          <form class="fields" method="post">
+          <form class="fields"  id="addNewProduct">
             <div class="row">
               <input type="text" class="w-25" placeholder="შტრიხკოდი">
               <input type="text" class="w-50" placeholder="დასახელება">
@@ -67,7 +68,9 @@
               <input type="text" class="w-25" placeholder="ფასი">
             </div>
             <div class="row">
-              <button class="addnewprod" type="submit">დამატება</button>
+              <button class="updateprod" type="submit">განახლება</button>
+              <button class="addprod" type="submit">დამატება</button>
+              <button class="deleteprod" type="submit">წაშლა</button>
             </div>
           </form>
         </div>
@@ -80,6 +83,7 @@
   
   <script type="module" src="./scripts/tabs.js"></script>
   <script type="module" src="./scripts/editWIndow.js"></script>
+  <script type="module" src="./scripts/addNewProd.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 

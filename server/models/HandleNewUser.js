@@ -43,5 +43,31 @@ export async function deleteUser(req, res) {
     res.send("user deleted")
 }
 export async function updateById(req, res) {
+    try {
+        var filter = {codes:req.params.codes}
+        var _update = req.body
+
+        var updateProduct = await Product.findOneAndUpdate(filter,_update)
+
+        console.log(updateProduct)
+        
+    }
+    catch(err) {
+        throw err
+    }
     res.send("user updated!")
+}
+
+export async function deleteById(req,res) {
+    try {
+        var filter = {codes:req.params.codes}
+
+        var deletedProduct = await Product.deleteOne(filter)
+
+        console.log("deleted")
+    }
+    catch(err) {
+        throw err
+    }
+    res.send("deleted!!")
 }

@@ -1,5 +1,6 @@
 var closeBtn = document.querySelector(".close-btn")
 var rowItem = document.querySelectorAll(".row-item")
+
 var editWindow = document.querySelector(".edit-window")
 var closeWindowButton = document.querySelector(".close-btn")
 var editWindowInputFileds = document.querySelectorAll(".fields .row input")
@@ -11,6 +12,7 @@ closeWindowButton.addEventListener("click",()=> {
 
 export function toggleWindow(data,id) {    
 
+    
     data.map((each)=> {
         if (each._id == id) {
             editWindowInputFileds[0].value = each.codes

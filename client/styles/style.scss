@@ -165,7 +165,7 @@ body {
             }
         }
     }
-    
+
 }
 
 .active-edit-window {
@@ -179,31 +179,35 @@ body {
     flex-direction: column;
     gap: 30px;
     justify-content: center;
+
     .row {
         display: flex;
         align-items: center;
         justify-content: space-around;
         width: 80%;
+
         .w-25 {
             width: 25%;
         }
-        
+
         .w-50 {
             width: 50%;
         }
-        
+
         input {
             border: 12px solid #576CBC;
             padding: 20px;
+
             &::placeholder {
                 font-family: "BPG Mrgvlovani", sans-serif;
-                
+
             }
         }
     }
-    
+
 }
-.addnewprod {
+
+.addprod {
     color: white;
     background-color: rgb(70, 182, 70);
     font-family: "BPG Mrgvlovani", sans-serif;
@@ -213,6 +217,29 @@ body {
     width: 150px !important;
     padding: 20px;
 }
+
+.updateprod {
+    color: white;
+    background-color: rgb(109, 70, 182);
+    font-family: "BPG Mrgvlovani", sans-serif;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 40px;
+    width: 150px !important;
+    padding: 20px;
+}
+
+.deleteprod {
+    color: white;
+    background-color: rgb(182, 70, 70);
+    font-family: "BPG Mrgvlovani", sans-serif;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 40px;
+    width: 150px !important;
+    padding: 20px;
+}
+
 .data {
     margin-top: 10px;
     width: 95%;

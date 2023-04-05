@@ -8,10 +8,11 @@ var dataParent = document.querySelector(".data")
 
 
 
-axios.get("http://localhost:8080/users")
+axios.get("http://192.168.100.4:8080/products")
     .then((res) => {
         var data = res.data
         data.map((each) => {
+
             dataParent.innerHTML += `
             <div class="row-item" id=${each._id}>
                 <div class="w-15 codes">${each.codes}</div>
@@ -26,7 +27,7 @@ axios.get("http://localhost:8080/users")
         var rowItems = document.querySelectorAll(".row-item")
 
         rowItems.forEach((item) => {
-            item.addEventListener("click", (e)=>toggleWindow(res.data,e.currentTarget.id))
+            item.addEventListener("click", (e) => toggleWindow(res.data, e.currentTarget.id))
         })
     })
     .catch((err) => {
