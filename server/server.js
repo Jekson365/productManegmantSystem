@@ -1,6 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import { PostNewUser, deleteById, deleteUser, updateById } from './models/HandleNewUser.js'
+import { PostNewUser, deleteById, deleteUser, findProduct, updateById } from './models/HandleNewUser.js'
 import cors from 'cors'
 import { getProducts } from './models/getAll.js'
 
@@ -16,6 +16,7 @@ app.post("/delete/:id", deleteUser)
 app.put("/update/:codes", updateById)
 app.get("/products", getProducts)
 app.delete("/delete/:codes",deleteById)
+app.get("/search/:title",findProduct)
 
 
 app.listen(8080, '192.168.100.4', () => {

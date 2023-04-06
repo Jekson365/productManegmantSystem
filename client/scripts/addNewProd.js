@@ -31,7 +31,7 @@ updateButton.addEventListener("click", (e) => {
             code: editWindowInputFileds[3].value,
             title: editWindowInputFileds[1].value,
             amount: editWindowInputFileds[5].value,
-            price: Number(editWindowInputFileds[2].value).toFixed(5),
+            price: editWindowInputFileds[2].value,
         }
     )
 })
@@ -41,6 +41,7 @@ addButton.addEventListener("click", () => {
 })
 
 addNewButton.addEventListener("click", (e) => {
+    // e.preventDefault()
 
     axios.post("http://192.168.100.4:8080/newuser",
         {
@@ -48,9 +49,15 @@ addNewButton.addEventListener("click", (e) => {
             code: editWindowInputFileds[3].value,
             title: editWindowInputFileds[1].value,
             amount: editWindowInputFileds[5].value,
-            price: Double(editWindowInputFileds[2].value).toFixed(6),
+            price: editWindowInputFileds[2].value,
         }
     )
+    .then((response)=> {
+        console.log(response)
+    })
+    .catch((err)=> {
+        console.log(err)
+    })
 
 })
 remove.addEventListener("click", () => {

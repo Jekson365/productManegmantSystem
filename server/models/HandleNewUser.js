@@ -10,13 +10,29 @@ export async function PostNewUser(req, res) {
 
     if (checkIfNum.test(codes) && checkIfNum.test(code)) {
         if (title.length > 3) {
-            const newItem = new Product(req.body)
-            newItem.save()
-                .then(() => {
+            try {
 
-                    console.log("pushed to database!")
+                const newItem = new Product(req.body)
 
-                })
+                newItem.save()
+                    .then(() => {
+
+                        console.log("pushed to database!")
+
+                    })
+                    .catch((err)=> {
+                        if (err.code === 11000) {
+                            res.status(11000)
+                            console.log("item already exists")
+                        }
+                        else {
+                            console.log("error!")
+                        }
+                    })
+            }
+            catch (err) {
+                throw err    
+            }
         }
         else {
             console.log("failed!")
@@ -26,7 +42,7 @@ export async function PostNewUser(req, res) {
         console.log("failed!")
     }
 
-
+    res.status(200)
     res.send("success")
 }
 
@@ -44,30 +60,40 @@ export async function deleteUser(req, res) {
 }
 export async function updateById(req, res) {
     try {
-        var filter = {codes:req.params.codes}
+        var filter = { codes: req.params.codes }
         var _update = req.body
 
-        var updateProduct = await Product.findOneAndUpdate(filter,_update)
+        var updateProduct = await Product.findOneAndUpdate(filter, _update)
 
         console.log(updateProduct)
-        
+
     }
-    catch(err) {
+    catch (err) {
         throw err
     }
     res.send("user updated!")
 }
 
-export async function deleteById(req,res) {
+export async function deleteById(req, res) {
     try {
-        var filter = {codes:req.params.codes}
+        var filter = { codes: req.params.codes }
 
         var deletedProduct = await Product.deleteOne(filter)
 
         console.log("deleted")
     }
-    catch(err) {
+    catch (err) {
         throw err
     }
     res.send("deleted!!")
+}
+export async function findProduct(req,res) {
+    try {
+        var title = req.params.title
+        var searchResult = await Product.find()
+
+    }
+    catch(err) {
+        throw err
+    }
 }
