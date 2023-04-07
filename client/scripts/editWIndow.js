@@ -10,7 +10,7 @@ closeWindowButton.addEventListener("click",()=> {
     editWindow.classList.remove("active-edit-window")
 } )
 
-export function toggleWindow(data,id) {    
+export function toggleWindow(data,id,item) {    
 
     
     data.map((each)=> {

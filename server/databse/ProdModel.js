@@ -3,7 +3,10 @@ import mongoose from "mongoose";
 const Product = mongoose.model('product',
     {
 
-        code:Number,
+        code:{
+            type:Number,
+            unique:true,
+        },
         codes: {
             type:Number,
             unique:true,

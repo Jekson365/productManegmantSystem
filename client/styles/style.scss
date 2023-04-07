@@ -10,6 +10,18 @@
     font-family: sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(221, 221, 221);
+}
+
+::-webkit-scrollbar-button {}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b5b5b5;
+    scroll-behavior: smooth;
+}
+
 .w-10 {
     width: 10%;
 }
@@ -241,6 +253,8 @@ body {
 }
 
 .data {
+    overflow-y: scroll;
+    max-height: 640px;
     margin-top: 10px;
     width: 95%;
 
@@ -256,6 +270,12 @@ body {
         overflow: hidden;
         align-items: center;
         justify-content: space-around;
+        transition: 0.3s;
+
+        &:hover {
+            width: 100%;
+
+        }
 
         div {
             letter-spacing: 1px;

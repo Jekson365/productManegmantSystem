@@ -6,6 +6,8 @@ const switcher = document.querySelectorAll(".tab")
 // add event listeners to swich buttons
 
 tabs[0].classList.add("active")
+switcher[0].classList.add("active")
+
 switcher.forEach((button)=> {
     button.addEventListener("click",(e)=> {
         switcher.forEach((btn)=> {

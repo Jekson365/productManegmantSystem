@@ -4,6 +4,8 @@ import { PostNewUser, deleteById, deleteUser, findProduct, updateById } from './
 import cors from 'cors'
 import { getProducts } from './models/getAll.js'
 
+export const IPADDRESS = "localhost"
+
 const app = express()
 
 app.use(express.json())
@@ -19,7 +21,7 @@ app.delete("/delete/:codes",deleteById)
 app.get("/search/:title",findProduct)
 
 
-app.listen(8080, '192.168.100.4', () => {
+app.listen(8080, IPADDRESS, () => {
     try {
 
         mongoose.connect("mongodb+srv://jeks:Jekojeko123@cluster0.cvg8nw9.mongodb.net/?retryWrites=true&w=majority");
